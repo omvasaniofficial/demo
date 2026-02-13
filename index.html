@@ -1,34 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Calculator</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrant Foundation | Premium Home Tutoring Class 1-5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body class="bg-white">
 
-<body>
-  <h1>Let's Count Numbers</h1>
-  <div class="square">
-    <div class="box">
-      <h3>Enter First Number</h3>
-      <input type="number" id="leftnum" class="input-field" placeholder="Type a number">
-      <h3>Enter Second Number</h3>
-      <input type="number" id="rightnum" class="input-field" placeholder="Type a number">
-    </div>
-    <div class="box">
-      <button class="btn" onclick="calculate('add')">Add (+)</button>
-      <button class="btn" onclick="calculate('subtract')">Subtract (-)</button>
-      <button class="btn" onclick="calculate('multiply')">Multiply (×)</button>
-      <button class="btn" onclick="calculate('divide')">Divide (/)</button>
-      <button class="btn" onclick="reset()">Reset</button>
-    </div>
-    <div class="box">
-      <h3>Answer</h3>
-      <h3 id="result">0</h3>
-    </div>
-  </div>
-  <script src="script.js"></script>
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between px-6 py-4 lg:px-20 bg-white sticky top-0 z-50 border-b border-gray-100">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-sky rounded-full flex items-center justify-center">
+                <span class="text-white font-bold text-xl">V</span>
+            </div>
+            <span class="text-2xl font-bold text-navy hidden sm:block">Vibrant Foundation</span>
+        </div>
+        <div class="hidden md:flex gap-8 font-medium text-gray-600">
+            <a href="#why" class="hover:text-sky-500">Why Us</a>
+            <a href="#curriculum" class="hover:text-sky-500">Curriculum</a>
+            <a href="#tutors" class="hover:text-sky-500">Our Tutors</a>
+            <a href="#pricing" class="hover:text-sky-500">Pricing</a>
+        </div>
+        <a href="#trial" class="btn-primary px-6 py-2 rounded-full font-bold">Book Free Trial</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-blue-50 py-16 lg:py-24 px-6 lg:px-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <div class="flex items-center justify-center lg:justify-start gap-2 mb-4">
+                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-bold">⭐ Trustpilot 4.9/5</span>
+                    <span class="text-gray-500 text-sm">| 200,000+ Happy Learners</span>
+                </div>
+                <h1 class="text-4xl lg:text-6xl mb-6 leading-tight">Master Math & English <br><span class="text-sky-500">With Confidence.</span></h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">Personalized 1:1 home tutoring for Classes 1-5. We turn "boring" subjects into exciting adventures using gamified tools.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#trial" class="btn-primary px-8 py-4 rounded-full text-xl font-bold text-center">Book a Free Demo Class</a>
+                    <div class="flex items-center gap-2 text-gray-500 justify-center">
+                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span>No credit card required</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <div class="absolute -top-10 -right-10 w-64 h-64 bg-yellow-300 rounded-full opacity-20 blur-3xl"></div>
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Child learning on laptop" class="rounded-3xl shadow-2xl relative z-10 border-8 border-white">
+                <div class="absolute bottom-4 -left-4 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-3 animate-bounce">
+                    <div class="bg-green-100 p-2 rounded-full"><svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg></div>
+                    <div class="text-sm font-bold">New Badge: Math Explorer!</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why" class="py-20 px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl mb-4">Why Parents Trust Vibrant Foundation</h2>
+            <p class="text-gray-500">Built for modern learners, verified for peace of mind.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div class="p-8 rounded-3xl border border-gray-100 bg-white shadow-sm text-center card-hover transition-all">
+                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                </div>
+                <h3 class="text-xl mb-3">1:1 Personal Care</h3>
+                <p class="text-gray-500 text-sm">Every child learns at their own pace with our dedicated mentors.</p>
+            </div>
+            <div class="p-8 rounded-3xl border border-gray-100 bg-white shadow-sm text-center card-hover transition-all">
+                <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 class="text-xl mb-3">Top 1% Tutors</h3>
+                <p class="text-gray-500 text-sm">Rigorous 5-step screening ensures only the best teachers reach your home.</p>
+            </div>
+            <div class="p-8 rounded-3xl border border-gray-100 bg-white shadow-sm text-center card-hover transition-all">
+                <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl mb-3">Gamified Learning</h3>
+                <p class="text-gray-500 text-sm">Interactive puzzles and games make learning feel like play time.</p>
+            </div>
+            <div class="p-8 rounded-3xl border border-gray-100 bg-white shadow-sm text-center card-hover transition-all">
+                <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
+                <h3 class="text-xl mb-3">Board Aligned</h3>
+                <p class="text-gray-500 text-sm">Our curriculum perfectly matches CBSE, ICSE, and Common Core standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Hub -->
+    <section id="curriculum" class="py-20 bg-gray-50 px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl lg:text-4xl text-center mb-12">Explore Our Curriculum</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-10 border-b border-gray-200">
+                <div class="curriculum-tab active px-6 py-3 font-bold text-lg" onclick="tabClick(this, 1)">Class 1</div>
+                <div class="curriculum-tab px-6 py-3 font-bold text-lg text-gray-400" onclick="tabClick(this, 2)">Class 2</div>
+                <div class="curriculum-tab px-6 py-3 font-bold text-lg text-gray-400" onclick="tabClick(this, 3)">Class 3</div>
+                <div class="curriculum-tab px-6 py-3 font-bold text-lg text-gray-400" onclick="tabClick(this, 4)">Class 4</div>
+                <div class="curriculum-tab px-6 py-3 font-bold text-lg text-gray-400" onclick="tabClick(this, 5)">Class 5</div>
+            </div>
+
+            <div id="curriculum-content" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <!-- Items will be injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutor Showcase -->
+    <section id="tutors" class="py-20 px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-end mb-12 gap-4">
+                <div class="text-left">
+                    <h2 class="text-3xl lg:text-4xl mb-4">Meet Our Master Mentors</h2>
+                    <p class="text-gray-500 max-w-xl">Every tutor is more than a teacher; they are mentors who inspire curiosity and build long-term confidence.</p>
+                </div>
+                <a href="#" class="text-sky-500 font-bold flex items-center gap-2">View all tutors <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tutor 1 -->
+                <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden card-hover transition-all">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Tutor" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl">Sarah Mitchell</h3>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">11+ yrs Exp</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4 font-medium italic">"Uses 3D Models for Geometry"</p>
+                        <p class="text-sm text-gray-600 mb-6">Sarah specializes in making Class 4 & 5 Math feel visual and easy to grasp.</p>
+                        <button class="w-full py-2 border-2 border-sky-500 text-sky-500 rounded-xl font-bold hover:bg-sky-50">View Profile</button>
+                    </div>
+                </div>
+                <!-- Tutor 2 -->
+                <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden card-hover transition-all">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Tutor" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl">James Chen</h3>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">8+ yrs Exp</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4 font-medium italic">"Storytelling Expert"</p>
+                        <p class="text-sm text-gray-600 mb-6">James uses narrative techniques to teach English Grammar and Vocabulary to Class 1-3.</p>
+                        <button class="w-full py-2 border-2 border-sky-500 text-sky-500 rounded-xl font-bold hover:bg-sky-50">View Profile</button>
+                    </div>
+                </div>
+                <!-- Tutor 3 -->
+                <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden card-hover transition-all">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Tutor" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl">Elena Rodriguez</h3>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded">5+ yrs Exp</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-4 font-medium italic">"Gamification Specialist"</p>
+                        <p class="text-sm text-gray-600 mb-6">Expert in keeping high-energy Class 1 students focused through digital escape rooms.</p>
+                        <button class="w-full py-2 border-2 border-sky-500 text-sky-500 rounded-xl font-bold hover:bg-sky-50">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-blue-50 px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl mb-4">Transparent Pricing Plans</h2>
+                <p class="text-gray-500">Choose the right commitment for your child's growth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-lg relative">
+                    <h3 class="text-2xl mb-2">Starter Plan</h3>
+                    <p class="text-gray-500 mb-6">Ideal for quick revision</p>
+                    <div class="text-4xl font-bold mb-6">$25 <span class="text-lg text-gray-400 font-normal">/ class</span></div>
+                    <ul class="space-y-4 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 6 Months Commitment</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 8 Classes / Month</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 1:1 Personal Tutor</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl border-2 border-gray-200 font-bold hover:bg-gray-50 transition-colors">Choose Plan</button>
+                </div>
+                <!-- Plan 2 (Popular) -->
+                <div class="bg-white p-8 rounded-3xl border-4 border-sky-500 shadow-2xl relative lg:-translate-y-4">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-sky-500 text-white px-4 py-1 rounded-full text-xs font-bold">BEST VALUE - 16% OFF</div>
+                    <h3 class="text-2xl mb-2">Academic Year</h3>
+                    <p class="text-gray-500 mb-6">Full foundation support</p>
+                    <div class="text-4xl font-bold mb-6 text-sky-500">$21 <span class="text-lg text-gray-400 font-normal">/ class</span></div>
+                    <ul class="space-y-4 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 12 Months Commitment</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 8 Classes / Month</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Parent App Access</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Unlimited Worksheets</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-xl bg-sky-500 text-white font-bold shadow-lg hover:bg-blue-600 transition-colors">Choose Plan</button>
+                </div>
+                <!-- Plan 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-lg relative">
+                    <h3 class="text-2xl mb-2">Long-Term Growth</h3>
+                    <p class="text-gray-500 mb-6">Mastery of all foundations</p>
+                    <div class="text-4xl font-bold mb-6">$20 <span class="text-lg text-gray-400 font-normal">/ class</span></div>
+                    <ul class="space-y-4 mb-8 text-sm">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 18 Months Commitment</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 8 Classes / Month</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Special Olympiad Prep</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl border-2 border-gray-200 font-bold hover:bg-gray-50 transition-colors">Choose Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="trial" class="py-20 px-6 lg:px-20 bg-navy text-white text-center bg-[#1a3a8a] relative overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-80 h-80 bg-sky-500 rounded-full opacity-20 blur-3xl"></div>
+        <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-orange-500 rounded-full opacity-20 blur-3xl"></div>
+        
+        <div class="max-w-3xl mx-auto relative z-10">
+            <h2 class="text-white text-3xl lg:text-5xl mb-6">Is Your Child Ready for Success?</h2>
+            <p class="text-blue-100 text-lg mb-10">Take our free 15-minute Diagnostic Test and discover your child's learning gaps today.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <input type="text" placeholder="Enter Parent's Email" class="px-6 py-4 rounded-full w-full max-w-sm text-gray-800 focus:outline-none focus:ring-4 focus:ring-sky-300">
+                <button class="btn-primary px-8 py-4 rounded-full font-bold text-xl whitespace-nowrap">Get Free Assessment</button>
+            </div>
+            <p class="mt-8 text-sm text-blue-200 flex items-center justify-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"></path></svg>
+                Secure and spam-free enrollment.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-6 lg:px-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="w-8 h-8 bg-sky rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold">V</span>
+                    </div>
+                    <span class="text-xl font-bold text-white">Vibrant Foundation</span>
+                </div>
+                <p class="text-sm">Building brighter futures for the next generation of thinkers, one student at a time.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Subjects</h4>
+                <ul class="text-sm space-y-2">
+                    <li><a href="#" class="hover:text-white">Mathematics</a></li>
+                    <li><a href="#" class="hover:text-white">English Language</a></li>
+                    <li><a href="#" class="hover:text-white">Science Discovery</a></li>
+                    <li><a href="#" class="hover:text-white">Coding for Kids</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Support</h4>
+                <ul class="text-sm space-y-2">
+                    <li><a href="#" class="hover:text-white">Become a Tutor</a></li>
+                    <li><a href="#" class="hover:text-white">Parent Guide</a></li>
+                    <li><a href="#" class="hover:text-white">Help Center</a></li>
+                    <li><a href="#" class="hover:text-white">Safety Standards</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Connect</h4>
+                <div class="flex gap-4">
+                    <div class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sky-500 transition-colors cursor-pointer">f</div>
+                    <div class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sky-500 transition-colors cursor-pointer">t</div>
+                    <div class="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-sky-500 transition-colors cursor-pointer">i</div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-gray-800 mt-12 pt-8 text-xs flex justify-between">
+            <p>&copy; 2026 Vibrant Foundation Tutoring. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
